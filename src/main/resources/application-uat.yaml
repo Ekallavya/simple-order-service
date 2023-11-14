@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /order
+
+app.username : ${APP_USER:admin}
+app.password : ${APP_PWD :admin}
+
+host:
+  email: madhureddie@gmail.com
+  cList[0]:
+    ip: 128.0.0.1
+    path: /uat1
+  cList[1]:
+    ip: 128.0.0.2
+    path: /uat2
+  cList[2]:
+    ip: 128.0.0.3
+    path: /uat3

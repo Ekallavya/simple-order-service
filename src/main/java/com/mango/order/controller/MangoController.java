@@ -3,6 +3,8 @@ package com.mango.order.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.mango.order.config.AppConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,11 +17,13 @@ public class MangoController {
 
 	private static final long serialVersionUID = -3970206781360313502L;
 	private static final Map<Integer, Mango> mangoData = getMangoData();
- 
+	@Autowired
+	AppConfig appConfig;
+
     @RequestMapping(value = "/mango/{Id}", method = RequestMethod.GET)
     public Mango getEmployeeDetails(@PathVariable int Id) {
         System.out.println("Getting Mango details for " + Id);
- 
+
         Mango mango = mangoData.get(Id);
         if (mango == null) {
             
