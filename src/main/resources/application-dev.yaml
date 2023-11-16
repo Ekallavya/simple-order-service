@@ -4,7 +4,7 @@ server:
     context-path: /order
 
 app.username : ${APP_USER:admin}
-app.password : ${APP_PWD :admin}
+app.password : ${APP_PWD:admin}
 
 #dev environment
 host:
