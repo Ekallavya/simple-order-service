@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.mango.order.config.AppConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +22,7 @@ public class MangoController {
 	AppConfig appConfig;
 
     @RequestMapping(value = "/mango/{Id}", method = RequestMethod.GET)
-    public Mango getEmployeeDetails(@PathVariable int Id) {
+    public ResponseEntity<Mango> getEmployeeDetails(@PathVariable int Id) {
         System.out.println("Getting Mango details for " + Id);
 
         Mango mango = mangoData.get(Id);
@@ -31,7 +32,7 @@ public class MangoController {
             
         }
         
-        return mango;
+        return ResponseEntity.ok().body(mango);
     }
 
 
